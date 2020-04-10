@@ -5,7 +5,12 @@ module Fastlane
   module Actions
     class SocratisAction < Action
       def self.run(params)
-        UI.message("The socratis plugin is working!")
+        require "open-uri"
+       open("https://m.media-amazon.com/images/M/MV5BMTJiMzgwZTktYzZhZC00YzhhLWEzZDUtMGM2NTE4MzQ4NGFmXkEyXkFqcGdeQWpybA@@._V1_UX477_CR0,0,477,268_AL_.jpg") {|f|
+       File.open("breakingbad.jpg","wb") do |file|
+        file.puts f.read
+       end
+       }
       end
 
       def self.description
